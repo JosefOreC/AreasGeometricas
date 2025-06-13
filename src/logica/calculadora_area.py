@@ -15,6 +15,8 @@ class CalculadoraArea:
         :param radio:
         :return: area de un circulo
         """
+        if radio <= 0:
+            raise ValueError('No se aceptan valores negativos')
         return CalculadoraArea.pi*(radio**2)
 
     @staticmethod
@@ -25,6 +27,8 @@ class CalculadoraArea:
         :param altura:
         :return: area
         """
+        if base <= 0 or altura <= 0:
+            raise ValueError('No se aceptan valores negativos')
         return CalculadoraArea.calc_area_rectangulo(base, altura)/2
 
     @staticmethod
@@ -35,6 +39,8 @@ class CalculadoraArea:
         :param altura:
         :return:
         """
+        if base <= 0 or altura <= 0:
+            raise ValueError('No se aceptan valores negativos')
         return base*altura
 
     @staticmethod
@@ -44,4 +50,6 @@ class CalculadoraArea:
         :param lado:
         :return:
         """
+        if lado <= 0:
+            raise ValueError('No se aceptan valores negativos')
         return CalculadoraArea.calc_area_rectangulo(lado, lado)
